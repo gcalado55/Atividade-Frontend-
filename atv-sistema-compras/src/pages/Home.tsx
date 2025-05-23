@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
+import { ProductCard } from '../components/ProductCard';
+import { products } from '../data/products';
 
 export function Home() {
-    const products = [
-      {id: 1, name: 'Product 1'},
-      {id: 2, name: 'Product 2'},
-    ];
-
     return (
       <div>
-        {products.map(products =>(
-          <div key={products.id}>
-            <h2>{products.name}</h2>
-            <Link to={`/product/${products.id}/${products.name}`}>View Details</Link>
-          </div>
-        ))}
+        <h1 className="text-2xl font-bold mb-6">Product List</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {products.map(product => (
+            <ProductCard 
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            image={product.image}
+            />
+          ))}
+        </div>
       </div>
     )
 }

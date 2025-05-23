@@ -11,7 +11,7 @@ function App() {
     <main className='p-8'></main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id/:name" element={<ProductDetails />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
