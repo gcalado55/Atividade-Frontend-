@@ -6,6 +6,7 @@ interface CartContextType {
   cartItems: Product[]
   addToCart: (product: Product) => void
   removeFromCart: (productId: number) => void
+  removeOneFromCart: (productId: number) => void
   clearCart: () => void
 }
 
@@ -34,13 +35,25 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     setCartItems(prev => prev.filter(item => item.id !== productId))
   }
 
+  const removeOneFromCart = (productId: number) => {
+    setCartItems(prev => {
+      const index = prev.findIndex(item => item.id === productId);
+      if (index !== -1) {
+        const newCart = [...prev];
+        newCart.splice(index, 1);
+        return newCart;
+      }
+      return prev;
+    });
+  }
+
   const clearCart = () => {
     setCartItems([])
   }
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+      value={{ cartItems, addToCart, removeFromCart, removeOneFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
