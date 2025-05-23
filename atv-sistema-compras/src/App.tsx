@@ -1,21 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/Home'
-import ProductDetail from './pages/ProductDetails'
-import { Cart } from './pages/Cart'
-import { CartProvider } from './contexts/CartContext'
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+import ProductDetails from './pages/ProductDetails';
+import { Cart } from './pages/Cart';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </Router>
-    </CartProvider>
-  )
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </Layout>
+  );
 }
 
-export default App
+export default App;

@@ -7,6 +7,7 @@ export const products: Product[] = [
     price: 299.99,
     image: "/HeadPhones.png",
     description: "High-quality wireless headphones with noise cancellation.",
+    quantity: 1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const products: Product[] = [
     price: 199.99,
     image: "https://via.placeholder.com/300x200?text=Smart+Watch",
     description: "Stylish smart watch with health tracking features.",
+    quantity: 3,
   },
   {
     id: 3,
@@ -21,5 +23,6 @@ export const products: Product[] = [
     price: 89.99,
     image: "https://via.placeholder.com/300x200?text=Gaming+Mouse",
     description: "Ergonomic gaming mouse with customizable DPI.",
+    quantity: 2,
   },
 ];
