@@ -1,21 +1,21 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { ProductDetails } from './pages/ProductDetails';
-import { Cart } from './pages/Cart';
-import { Header } from './components/Header'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Home } from './pages/Home'
+import ProductDetail from './pages/ProductDetails'
+import { Cart } from './pages/Cart'
+import { CartProvider } from './contexts/CartContext'
 
 function App() {
   return (
-    <BrowserRouter>
-    <Header></Header>
-    <main className='p-8'></main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </CartProvider>
+  )
 }
 
-export default App;
+export default App
