@@ -26,7 +26,7 @@ const Cart = () => {
                 onClick={() => removeFromCart(item.id)}
                 className="bg-red-500 text-white px-4 py-2 rounded"
               >
-                Remover
+                Remove
               </button>
             </div>
           ))}
@@ -36,7 +36,7 @@ const Cart = () => {
           </div>
 
           <button className="mt-4 bg-green-600 text-white px-6 py-2 rounded">
-            Finalizar Compra
+            Checkout
           </button>
         </div>
       )}

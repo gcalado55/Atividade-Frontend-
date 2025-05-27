@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../contexts/DarkModeContext";
 
 type ProductCardProps = {
   id: number;
@@ -8,19 +10,29 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ id, name, price, image }: ProductCardProps) {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
-    <div className="border rounded-2xl overflow-hidden  shadow-md hover:shadowlg transition-all">
-      <img src={image} alt={name} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h2 className="font-semibold text-lg">{name}</h2>
-        <p className="text-blue-600 font-bold mt-2">${price.toFixed(2)}</p>
-        <Link
-          to={`/product/${id}`}
-          className="inline-block mt-4 text-white bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-lg text-sm font-bold shadow transition"
-        >
-          View Details
-        </Link>
+    <Link to={`/product/${id}`} className="block">
+      <div
+        className={`bg-surface rounded-2xl shadow-[8px_8px_16px_#b0a6a9,-8px_-8px_16px_#EFF1F3] transition-transform duration-300 ease-in-out cursor-pointer w-64 h-64 flex flex-col justify-between hover:[transform:scale(1.008)] ${
+          darkMode ? "border-2 border-red-600" : ""
+        }`}
+      >
+        <div className="p-2 flex flex-col items-center">
+          <h2 className="font-semibold text-lg text-center mb-2 text-primary">
+            {name}
+          </h2>
+          <img
+            src={image}
+            alt={name}
+            className="w-50 h-50 object-contain mx-auto bg-background rounded-xl"
+          />
+        </div>
+        <div className="text-lg font-bold text-primary">
+          $ {price.toFixed(2)}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

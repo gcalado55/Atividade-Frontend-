@@ -6,7 +6,7 @@ export function Header() {
   const cartCount = cartItems.length;
 
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-blue-400 shadow-md py-4 px-8 flex justify-between items-center sticky top-0 z-50">
+    <header className="bg-[#2a3990] shadow-md py-4 px-8 flex justify-between items-center sticky top-0 z-50">
       <Link to="/" className="flex items-center gap-2 text-white text-2xl font-extrabold tracking-wide">
         <span className="bg-white rounded-full px-2 py-1 text-blue-600 font-bold shadow">VShop</span>
       </Link>
