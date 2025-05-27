@@ -104,7 +104,7 @@ src/
 
 To run the project in development mode:
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
 To build the project for production:
