@@ -42,7 +42,7 @@ pnpm install
 
 3. Start the development server:
 ```bash
-pnpm dev
+pnpm run dev
 ```
 
 4. Open your browser and navigate to:
