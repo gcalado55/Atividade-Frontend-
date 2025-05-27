@@ -1,30 +1,31 @@
 # Tech E-commerce Website
 
-A modern e-commerce platform for technology products, offering a wide range of items including smartphones, monitors, headphones, keyboards, smartwatches, and more.
+A modern e-commerce platform for technology products built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
 - 🛍️ Product categories browsing
-- 🔍 Search functionality
+- 🔍 Real-time search functionality
 - 🌓 Dark/Light mode toggle
 - 🛒 Shopping cart management
-- 👤 User authentication
+- 👤 User authentication with local storage
 - 📱 Responsive design
 - 🔐 Secure checkout process
 
-## Technologies Used
+## Tech Stack
 
-- **React** - Frontend library
-- **TypeScript** - Programming language
-- **Tailwind CSS** - Styling framework
-- **React Router** - Navigation
+- **React 18** - Frontend library
+- **TypeScript** - Type safety and better developer experience
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Next generation frontend tooling
+- **React Router DOM** - Client-side routing
+- **React Icons** - Icon components
 - **LocalStorage** - Data persistence
-- **Vite** - Build tool
 
 ## Prerequisites
 
 - Node.js (version 16 or higher)
-- npm (Node Package Manager)
+- pnpm (version 8 or higher)
 
 ## Installation
 
@@ -34,14 +35,14 @@ git clone https://github.com/yourusername/tech-ecommerce.git
 cd tech-ecommerce
 ```
 
-2. Install dependencies:
+2. Install dependencies with pnpm:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start the development server:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 4. Open your browser and navigate to:
@@ -49,16 +50,17 @@ npm run dev
 http://localhost:5173
 ```
 
-## Development
+## Available Scripts
 
-To run the project in development mode:
-```bash
-npm run dev
-```
-
-To build the project for production:
-```bash
-npm run build
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  }
+}
 ```
 
 ## Project Structure
@@ -67,15 +69,13 @@ npm run build
 src/
 ├── components/     # Reusable UI components
 ├── pages/         # Page components
-├── mock/          # Mock data
-├── context/       # React context
-├── types/         # TypeScript types
-└── styles/        # Global styles
+├── mock/          # Mock data for products
+├── context/       # React context providers
+├── types/         # TypeScript type definitions
+└── styles/        # Global styles and Tailwind config
 ```
 
-## Dependencies
-
-Main dependencies used in this project:
+## Key Dependencies
 
 ```json
 {
@@ -83,26 +83,38 @@ Main dependencies used in this project:
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "react-icons": "^4.8.0",
+    "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
   }
 }
 ```
 
-## Scripts
+## Development
 
-Available npm scripts:
+To run the project in development mode:
+```bash
+pnpm dev
+```
 
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  }
-}
+To build the project for production:
+```bash
+pnpm build
+```
+
+To preview the production build:
+```bash
+pnpm preview
 ```
 
 ## Contributing
